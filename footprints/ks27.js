@@ -10,7 +10,7 @@ module.exports = {
   },
   body: (p) => {
     const standard = `
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
       ${p.at /* parametric position */}
       
       ${"" /* footprint reference */}
@@ -18,7 +18,7 @@ module.exports = {
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -48,22 +48,44 @@ module.exports = {
       (fp_line (start 9.25 9.25) (end -9.25 9.25) (layer Dwgs.User) (width 0.15))
       (fp_line (start -9.25 9.25) (end -9.25 -9.25) (layer Dwgs.User) (width 0.15))
       `;
-    function pins(def_neg, def_pos, def_side) {
-      if (p.hotswap) {
+    function pins(def_neg, def_pos, def_side, def_rev) {
+      if (p.hotswap && !def_rev) {
         return `
           ${"" /* holes */}
-          (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
-          (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at ${def_neg}4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at ${def_pos}2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           ${"" /* net pads */}
           (pad "1" smd rect (at ${def_neg}7.675 4.7 ${p.rot}) (size 2.6 2.6) (layers ${def_side}.Cu ${def_side}.Paste ${def_side}.Mask) ${p.from.str})
           (pad "2" smd rect (at ${def_pos}5.875 5.75 ${p.rot}) (size 2.6 2.6) (layers ${def_side}.Cu ${def_side}.Paste ${def_side}.Mask) ${p.to.str})
         `;
+      } else if (p.hotswap && def_rev) {
+        return `
+          ${"" /* holes */}
+          (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          
+          ${"" /* net pads */}
+          (pad "1" smd rect (at -7.675 4.7 ${p.rot}) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) ${p.from.str})
+          (pad "2" smd rect (at 5.875 5.75 ${p.rot}) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) ${p.to.str})
+          (pad "1" smd rect (at -7.675 -4.7 ${p.rot}) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) ${p.from.str})
+          (pad "2" smd rect (at 5.875 -5.75 ${p.rot}) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) ${p.to.str})
+        `;
+      } else if (!p.hotswap && !def_rev) {
+        return `
+            ${"" /* pins */}
+            (pad 1 thru_hole circle (at ${def_pos}4.4 4.7) (size 2.286 2.286) (drill 1.4986) (layers *.Cu *.Mask) ${p.from.str})
+            (pad 2 thru_hole circle (at ${def_neg}2.6 5.75) (size 2.286 2.286) (drill 1.4986) (layers *.Cu *.Mask) ${p.to.str})
+          `;
       } else {
         return `
             ${"" /* pins */}
-            (pad 1 thru_hole circle (at ${def_pos}-4.4 4.7) (size 2.286 2.286) (drill 1.4986) (layers *.Cu *.Mask) ${p.from.str})
-            (pad 2 thru_hole circle (at ${def_neg}2.6 5.75) (size 2.286 2.286) (drill 1.4986) (layers *.Cu *.Mask) ${p.to.str})
+            (pad 1 thru_hole circle (at -4.4 4.7) (size 2.286 2.286) (drill 1.4986) (layers *.Cu *.Mask) ${p.from.str})
+            (pad 2 thru_hole circle (at 2.6 5.75) (size 2.286 2.286) (drill 1.4986) (layers *.Cu *.Mask) ${p.to.str})
+            (pad 1 thru_hole circle (at -4.4 -4.7) (size 2.286 2.286) (drill 1.4986) (layers *.Cu *.Mask) ${p.from.str})
+            (pad 2 thru_hole circle (at 2.6 -5.75) (size 2.286 2.286) (drill 1.4986) (layers *.Cu *.Mask) ${p.to.str})
           `;
       }
     }
@@ -71,14 +93,13 @@ module.exports = {
       return `
         ${standard}
         ${p.keycaps ? keycap : ""}
-        ${pins("-", "", "B")}
-        ${pins("", "-", "F")})
+        ${pins("", "", "", true)})
         `;
     } else {
       return `
         ${standard}
         ${p.keycaps ? keycap : ""}
-        ${pins("-", "", "B")})
+        ${pins("-", "", "B", false)})
         `;
     }
   },

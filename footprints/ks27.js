@@ -2,6 +2,7 @@ module.exports = {
   params: {
     designator: "S",
     side: "F",
+    hotswap: false,
     reverse: false,
     keycaps: false,
     from: undefined,

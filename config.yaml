@@ -1,0 +1,138 @@
+units:
+  ks: 15
+  kc: 18.5
+  kp: kc + 1
+points:
+  key:
+    height: kc
+    width: kc
+    spread: kp
+    padding: kp
+  zones:
+    matrix:
+      columns:
+        outer:
+          key.splay: 2
+        pinky:
+          key.stagger: 2
+        ring:
+          key.stagger: 4
+          key.splay: -2
+          key.spread: kp
+        middle:
+          key.stagger: 3
+        index:
+          key.splay: -4
+          key.stagger: -3
+          rows.mod.skip: true
+        inner:
+          key.splay: -3
+          key.stagger: -5
+          key.spread: kc
+          rows.mod.skip: true
+      rows:
+        mod:
+        bottom:
+        home:
+        top:
+    thumbfan:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [0, -kc - 5]
+        rotate: -20
+      columns:
+        outer:
+        home:
+          key.height: 1.5kc
+          key.shift: [0, 0.25kc]
+        inner:
+          key.height: 1.5kc
+          key.shift: [0, 0.25kc]
+outlines:
+  switches:
+    - what: rectangle
+      where: true
+      size: [ks, ks]
+  keycaps:
+    - what: rectangle
+      where: true
+      size: [kc, kc]
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_outer_top
+          shift: [-0.5ks, 0.5ks]
+        - ref: matrix_outer_top
+          shift: [0.5ks, 0.5ks]
+        - ref: matrix_pinky_top
+          shift: [-0.5ks, 0.5ks]
+        - ref: matrix_pinky_top
+          shift: [0.5ks, 0.5ks]
+        - ref: matrix_ring_top
+          shift: [-0.5ks, 0.5ks]
+        - ref: matrix_ring_top
+          shift: [0.5ks, 0.5ks]
+        - ref: matrix_middle_top
+          shift: [-0.5ks, 0.5ks]
+        - ref: matrix_middle_top
+          shift: [0.5ks, 0.5ks]
+        - ref: matrix_index_top
+          shift: [-0.5ks, 0.5ks]
+        - ref: matrix_index_top
+          shift: [0.5ks, 0.5ks]
+        - ref: matrix_inner_top
+          shift: [-0.5ks, 0.5ks]
+        - ref: matrix_inner_top
+          shift: [2.5ks, 0.5ks]
+        - ref: matrix_inner_bottom
+          shift: [2.5ks, -0.5ks]
+        - ref: thumbfan_inner
+          shift: [0.5ks, 0.75ks]
+        - ref: thumbfan_inner
+          shift: [0.5ks, -0.75ks]
+        - ref: thumbfan_outer
+          shift: [-0.5ks, -0.5ks]
+        - ref: matrix_outer_mod
+          shift: [-0.5ks, -0.5ks]
+      expand: 5
+      joints: round
+  combo:
+    - name: board
+    - operation: subtract
+      name: switches
+  cap_combo:
+    - name: board
+    - operation: subtract
+      name: keycaps
+pcbs:
+  left:
+    outlines:
+      main:
+        outline: combo
+    footprints:
+      ks27:
+        what: ks27
+        where: true
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, 10]
+      nicenano:
+        what: nicenano
+        params:
+          orientation: "down"
+        where:
+          ref: matrix_inner_top
+          shift: [1.5kc, -0.5kc]
+          rotate: -90

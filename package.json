@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "ergogen": "^4.0.4"
+  },
+  "scripts" : {
+    "build" : "npx ergogen . && mv ./output/pcbs/left.kicad_pcb ./kicad_project/ErgoKeyboard/"
   }
 }

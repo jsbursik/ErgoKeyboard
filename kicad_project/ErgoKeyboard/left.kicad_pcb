@@ -118,30 +118,28 @@
 (net 23 "outer_default")
 (net 24 "home_default")
 (net 25 "inner_default")
-(net 26 "BATP")
-(net 27 "RAW")
-(net 28 "GND")
-(net 29 "RST")
-(net 30 "VCC")
-(net 31 "P21")
-(net 32 "P20")
-(net 33 "P19")
-(net 34 "P18")
-(net 35 "P15")
-(net 36 "P14")
-(net 37 "P16")
-(net 38 "P10")
-(net 39 "BATG")
-(net 40 "P1")
-(net 41 "P0")
-(net 42 "P2")
-(net 43 "P3")
-(net 44 "P4")
-(net 45 "P5")
-(net 46 "P6")
-(net 47 "P7")
-(net 48 "P8")
-(net 49 "P9")
+(net 26 "RAW")
+(net 27 "GND")
+(net 28 "RST")
+(net 29 "VCC")
+(net 30 "P21")
+(net 31 "P20")
+(net 32 "P19")
+(net 33 "P18")
+(net 34 "P15")
+(net 35 "P14")
+(net 36 "P16")
+(net 37 "P10")
+(net 38 "P1")
+(net 39 "P0")
+(net 40 "P2")
+(net 41 "P3")
+(net 42 "P4")
+(net 43 "P5")
+(net 44 "P6")
+(net 45 "P7")
+(net 46 "P8")
+(net 47 "P9")
             
   (net_class Default "This is the default net class."
     (clearance 0.2)
@@ -176,7 +174,6 @@
 (add_net "outer_default")
 (add_net "home_default")
 (add_net "inner_default")
-(add_net "BATP")
 (add_net "RAW")
 (add_net "GND")
 (add_net "RST")
@@ -189,7 +186,6 @@
 (add_net "P14")
 (add_net "P16")
 (add_net "P10")
-(add_net "BATG")
 (add_net "P1")
 (add_net "P0")
 (add_net "P2")
@@ -204,15 +200,15 @@
 
             
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 0 0 2)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 150 175 2)
       
       
       (fp_text reference "S1" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -246,23 +242,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 1 "outer_mod"))
+          (pad "1" smd rect (at -7.675 -4.7 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 1 "outer_mod"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at -0.6805402 -19.4881211 2)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 149.3194598 155.5118789 2)
       
       
       (fp_text reference "S2" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -296,23 +296,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 2 "outer_bottom"))
+          (pad "1" smd rect (at -7.675 -4.7 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 2 "outer_bottom"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at -1.3610804 -38.9762422 2)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 148.6389196 136.0237578 2)
       
       
       (fp_text reference "S3" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -346,23 +350,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 3 "outer_home"))
+          (pad "1" smd rect (at -7.675 -4.7 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 3 "outer_home"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at -2.0416206 -58.4643633 2)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 147.9583794 116.5356367 2)
       
       
       (fp_text reference "S4" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -396,23 +404,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 4 "outer_top"))
+          (pad "1" smd rect (at -7.675 -4.7 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 4 "outer_top"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 19.4183221 -2.6793218 2)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 169.4183221 172.3206782 2)
       
       
       (fp_text reference "S5" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -446,23 +458,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 5 "pinky_mod"))
+          (pad "1" smd rect (at -7.675 -4.7 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 5 "pinky_mod"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 18.7377819 -22.1674429 2)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 168.73778190000002 152.8325571 2)
       
       
       (fp_text reference "S6" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -496,23 +512,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 6 "pinky_bottom"))
+          (pad "1" smd rect (at -7.675 -4.7 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 6 "pinky_bottom"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 18.057241700000002 -41.655564 2)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 168.05724170000002 133.344436 2)
       
       
       (fp_text reference "S7" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -546,23 +566,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 7 "pinky_home"))
+          (pad "1" smd rect (at -7.675 -4.7 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 7 "pinky_home"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 17.376701500000003 -61.1436851 2)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 167.37670150000002 113.8563149 2)
       
       
       (fp_text reference "S8" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -596,23 +620,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 2) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 8 "pinky_top"))
+          (pad "1" smd rect (at -7.675 -4.7 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 2) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 8 "pinky_top"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 38.7668453 -7.3574253 0)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 188.7668453 167.6425747 0)
       
       
       (fp_text reference "S9" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -646,23 +674,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 9 "ring_mod"))
+          (pad "1" smd rect (at -7.675 -4.7 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 9 "ring_mod"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 38.7668453 -26.8574253 0)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 188.7668453 148.1425747 0)
       
       
       (fp_text reference "S10" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -696,23 +728,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 10 "ring_bottom"))
+          (pad "1" smd rect (at -7.675 -4.7 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 10 "ring_bottom"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 38.7668453 -46.3574253 0)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 188.7668453 128.6425747 0)
       
       
       (fp_text reference "S11" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -746,23 +782,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 11 "ring_home"))
+          (pad "1" smd rect (at -7.675 -4.7 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 11 "ring_home"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 38.7668453 -65.8574253 0)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 188.7668453 109.14257470000001 0)
       
       
       (fp_text reference "S12" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -796,23 +836,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 12 "ring_top"))
+          (pad "1" smd rect (at -7.675 -4.7 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 12 "ring_top"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 58.2668453 -10.3574253 0)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 208.2668453 164.6425747 0)
       
       
       (fp_text reference "S13" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -846,23 +890,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 13 "middle_mod"))
+          (pad "1" smd rect (at -7.675 -4.7 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 13 "middle_mod"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 58.2668453 -29.8574253 0)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 208.2668453 145.1425747 0)
       
       
       (fp_text reference "S14" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -896,23 +944,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 14 "middle_bottom"))
+          (pad "1" smd rect (at -7.675 -4.7 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 14 "middle_bottom"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 58.2668453 -49.3574253 0)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 208.2668453 125.64257470000001 0)
       
       
       (fp_text reference "S15" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -946,23 +998,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 15 "middle_home"))
+          (pad "1" smd rect (at -7.675 -4.7 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 15 "middle_home"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 58.2668453 -68.8574253 0)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 208.2668453 106.14257470000001 0)
       
       
       (fp_text reference "S16" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -996,23 +1052,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 0) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 16 "middle_top"))
+          (pad "1" smd rect (at -7.675 -4.7 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 0) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 16 "middle_top"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 79.1270964 -26.8099243 -4)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 229.1270964 148.19007570000002 -4)
       
       
       (fp_text reference "S17" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -1046,23 +1106,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 -4) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 -4) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 17 "index_bottom"))
+          (pad "1" smd rect (at -7.675 -4.7 -4) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 -4) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 17 "index_bottom"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 80.48734759999999 -46.262423299999995 -4)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 230.4873476 128.73757670000003 -4)
       
       
       (fp_text reference "S18" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -1096,23 +1160,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 -4) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 -4) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 18 "index_home"))
+          (pad "1" smd rect (at -7.675 -4.7 -4) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 -4) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 18 "index_home"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 81.84759879999999 -65.7149223 -4)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 231.8475988 109.28507770000003 -4)
       
       
       (fp_text reference "S19" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -1146,23 +1214,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 -4) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 -4) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 19 "index_top"))
+          (pad "1" smd rect (at -7.675 -4.7 -4) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 -4) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 19 "index_top"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 98.2494501 -20.4337604 -7)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 248.2494501 154.56623960000002 -7)
       
       
       (fp_text reference "S20" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -1196,23 +1268,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 -7) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 -7) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 20 "inner_bottom"))
+          (pad "1" smd rect (at -7.675 -4.7 -7) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 -7) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 20 "inner_bottom"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 100.6259023 -39.788410400000004 -7)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 250.62590229999998 135.21158960000002 -7)
       
       
       (fp_text reference "S21" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -1246,23 +1322,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 -7) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 -7) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 21 "inner_home"))
+          (pad "1" smd rect (at -7.675 -4.7 -7) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 -7) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 21 "inner_home"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 103.00235450000001 -59.1430604 -7)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 253.00235449999997 115.85693960000003 -7)
       
       
       (fp_text reference "S22" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -1296,23 +1376,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 -7) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 -7) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 22 "inner_top"))
+          (pad "1" smd rect (at -7.675 -4.7 -7) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 -7) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 22 "inner_top"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 95.3855205 2.8910741999999985 -27)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 245.38552049999998 177.89107420000002 -27)
       
       
       (fp_text reference "S23" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -1346,23 +1430,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 -27) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 -27) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 23 "outer_default"))
+          (pad "1" smd rect (at -7.675 -4.7 -27) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 -27) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 23 "outer_default"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 114.85985380000001 7.622983699999998 -27)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 264.8598538 182.62298370000002 -27)
       
       
       (fp_text reference "S24" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -1396,23 +1484,27 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 -27) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 -27) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 24 "home_default"))
+          (pad "1" smd rect (at -7.675 -4.7 -27) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 -27) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 24 "home_default"))
         )
         
 
         
-      (module lib:gateron-ks27-hotswap-reversible (layer "F.Cu") (tedit 625D4425)
-      (at 132.234481 16.4757985 -27)
+      (module lib:gateron-ks27 (layer "F.Cu") (tedit 625D4425)
+      (at 282.23448099999996 191.47579850000002 -27)
       
       
       (fp_text reference "S25" (at 0.1 -8.5 unlocked) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27-hs-reversible" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -1446,10 +1538,14 @@
           
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.4 -4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
           (pad "1" smd rect (at -7.675 4.7 -27) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 0 ""))
           (pad "2" smd rect (at 5.875 5.75 -27) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 25 "inner_default"))
+          (pad "1" smd rect (at -7.675 -4.7 -27) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+          (pad "2" smd rect (at 5.875 -5.75 -27) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 25 "inner_default"))
         )
         
 
@@ -1457,7 +1553,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at -0.348995 -9.9939083 2)
+        (at 149.651005 165.0060917 2)
 
         
         (fp_text reference "D1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1496,7 +1592,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at -1.0295352 -29.482029400000002 2)
+        (at 148.9704648 145.5179706 2)
 
         
         (fp_text reference "D2" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1535,7 +1631,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at -1.7100754 -48.9701505 2)
+        (at 148.2899246 126.0298495 2)
 
         
         (fp_text reference "D3" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1574,7 +1670,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at -2.3906156 -68.4582716 2)
+        (at 147.6093844 106.5417284 2)
 
         
         (fp_text reference "D4" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1613,7 +1709,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 19.069327100000002 -12.6732301 2)
+        (at 169.0693271 162.32676990000002 2)
 
         
         (fp_text reference "D5" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1652,7 +1748,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 18.388786900000003 -32.1613512 2)
+        (at 168.3887869 142.83864880000002 2)
 
         
         (fp_text reference "D6" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1691,7 +1787,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 17.708246700000004 -51.6494723 2)
+        (at 167.70824670000002 123.3505277 2)
 
         
         (fp_text reference "D7" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1730,7 +1826,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 17.027706500000004 -71.1375934 2)
+        (at 167.02770650000002 103.8624066 2)
 
         
         (fp_text reference "D8" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1769,7 +1865,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 38.7668453 -17.3574253 0)
+        (at 188.7668453 157.6425747 0)
 
         
         (fp_text reference "D9" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1808,7 +1904,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 38.7668453 -36.8574253 0)
+        (at 188.7668453 138.1425747 0)
 
         
         (fp_text reference "D10" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1847,7 +1943,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 38.7668453 -56.3574253 0)
+        (at 188.7668453 118.64257470000001 0)
 
         
         (fp_text reference "D11" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1886,7 +1982,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 38.7668453 -75.8574253 0)
+        (at 188.7668453 99.14257470000001 0)
 
         
         (fp_text reference "D12" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1925,7 +2021,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 58.2668453 -20.3574253 0)
+        (at 208.2668453 154.6425747 0)
 
         
         (fp_text reference "D13" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1964,7 +2060,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 58.2668453 -39.8574253 0)
+        (at 208.2668453 135.1425747 0)
 
         
         (fp_text reference "D14" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2003,7 +2099,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 58.2668453 -59.3574253 0)
+        (at 208.2668453 115.64257470000001 0)
 
         
         (fp_text reference "D15" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2042,7 +2138,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 58.2668453 -78.8574253 0)
+        (at 208.2668453 96.14257470000001 0)
 
         
         (fp_text reference "D16" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2081,7 +2177,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 79.8246611 -36.7855648 -4)
+        (at 229.8246611 138.21443520000003 -4)
 
         
         (fp_text reference "D17" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2120,7 +2216,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 81.1849123 -56.23806379999999 -4)
+        (at 231.18491229999998 118.76193620000004 -4)
 
         
         (fp_text reference "D18" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2159,7 +2255,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 82.54516349999999 -75.6905628 -4)
+        (at 232.54516349999997 99.30943720000003 -4)
 
         
         (fp_text reference "D19" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2198,7 +2294,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 99.46814350000001 -30.3592219 -7)
+        (at 249.4681435 144.6407781 -7)
 
         
         (fp_text reference "D20" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2237,7 +2333,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 101.84459570000001 -49.7138719 -7)
+        (at 251.84459569999999 125.28612810000003 -7)
 
         
         (fp_text reference "D21" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2276,7 +2372,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 104.22104790000002 -69.06852190000001 -7)
+        (at 254.22104789999997 105.93147810000004 -7)
 
         
         (fp_text reference "D22" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2315,7 +2411,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 99.9254255 -6.0189910000000015 -27)
+        (at 249.9254255 168.98100900000003 -27)
 
         
         (fp_text reference "D23" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2354,7 +2450,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 119.39975880000001 -1.287081500000002 -27)
+        (at 269.3997588 173.71291850000003 -27)
 
         
         (fp_text reference "D24" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2393,7 +2489,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 136.774386 7.5657333 -27)
+        (at 286.77438599999994 182.56573330000003 -27)
 
         
         (fp_text reference "D25" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2430,7 +2526,7 @@
 
     
   (module nicenano (layer F.Cu)
-  (at 129.4182188 -46.5801342 -97)
+  (at 273.21480529999997 127.65818240000003 -97)
 
   
   (fp_text reference "MCU1" (at 0 1.625 -97) (layer "F.SilkS") hide (effects (font (size 1.2 1.2) (thickness 0.2032))))
@@ -2476,31 +2572,31 @@
       (fp_text user "106" (at 13.97 5.53719 -7) (layer "F.SilkS") (effects (font (size 0.8 0.8) (thickness 0.15))))
 
       
-      (pad "1" thru_hole circle (at -13.97 -7.62) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "2" thru_hole circle (at -11.43 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "3" thru_hole circle (at -8.89 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "4" thru_hole circle (at -6.35 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "5" thru_hole circle (at -3.81 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "6" thru_hole circle (at -1.27 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "7" thru_hole circle (at 1.27 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "8" thru_hole circle (at 3.81 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "9" thru_hole circle (at 6.35 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "10" thru_hole circle (at 8.89 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "11" thru_hole circle (at 11.43 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "12" thru_hole circle (at 13.97 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask))
+      (pad "1" thru_hole circle (at -13.97 -7.62) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 26 "RAW")) 
+      (pad "2" thru_hole circle (at -11.43 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 27 "GND")) 
+      (pad "3" thru_hole circle (at -8.89 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 28 "RST")) 
+      (pad "4" thru_hole circle (at -6.35 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 29 "VCC")) 
+      (pad "5" thru_hole circle (at -3.81 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 30 "P21")) 
+      (pad "6" thru_hole circle (at -1.27 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 31 "P20")) 
+      (pad "7" thru_hole circle (at 1.27 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 32 "P19")) 
+      (pad "8" thru_hole circle (at 3.81 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 33 "P18")) 
+      (pad "9" thru_hole circle (at 6.35 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 34 "P15")) 
+      (pad "10" thru_hole circle (at 8.89 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 35 "P14")) 
+      (pad "11" thru_hole circle (at 11.43 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 36 "P16")) 
+      (pad "12" thru_hole circle (at 13.97 -7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 37 "P10"))
 
-      (pad "13" thru_hole circle (at 13.97 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "14" thru_hole circle (at 11.43 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "15" thru_hole circle (at 8.89 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "16" thru_hole circle (at 6.35 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "17" thru_hole circle (at 3.81 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "18" thru_hole circle (at 1.27 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "19" thru_hole circle (at -1.27 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "20" thru_hole circle (at -3.81 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "21" thru_hole circle (at -6.35 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "22" thru_hole circle (at -8.89 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "23" thru_hole circle (at -11.43 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
-      (pad "24" thru_hole circle (at -13.97 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask))
+      (pad "13" thru_hole circle (at -13.97 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 38 "P1"))
+      (pad "14" thru_hole circle (at -11.43 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 39 "P0")) 
+      (pad "15" thru_hole circle (at -8.89 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 27 "GND")) 
+      (pad "16" thru_hole circle (at -6.35 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 27 "GND")) 
+      (pad "20" thru_hole circle (at 3.81 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 40 "P2")) 
+      (pad "17" thru_hole circle (at -3.81 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 41 "P3")) 
+      (pad "18" thru_hole circle (at -1.27 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 42 "P4")) 
+      (pad "19" thru_hole circle (at 1.27 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 43 "P5")) 
+      (pad "21" thru_hole circle (at 6.35 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 44 "P6")) 
+      (pad "22" thru_hole circle (at 8.89 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 45 "P7")) 
+      (pad "23" thru_hole circle (at 11.43 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 46 "P8")) 
+      (pad "24" thru_hole circle (at 13.97 7.62 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 47 "P9")) 
 
       
       (pad "31" thru_hole circle (at 8.89 5.08) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
@@ -2508,133 +2604,220 @@
       (pad "33" thru_hole circle (at 8.89 0) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.SilkS *.Mask)) 
       )
     
-            (gr_line (start -12.230639100000001 7.9316749) (end -14.795752100000001 -65.5235508) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start -9.798798000000001 -65.6980483) (end -9.9732955 -70.69500239999999) (angle -89.99999979353682) (layer Edge.Cuts) (width 0.15))
-(gr_line (start -9.973295499999999 -70.69500239999999) (end 3.957141088386372 -71.18146391823142) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 3.957141088386372 -71.18146391823142) (end 7.429711900000003 -72.87233649999999) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 9.619524100000003 -68.3773701) (end 9.445026600000004 -73.37432419999999) (angle -23.97394846350602) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 9.445026600000004 -73.37432419999999) (end 23.012342503103053 -73.84810526570263) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 23.012342503103053 -73.84810526570263) (end 28.485172400000003 -77.51221720000001) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 31.266845300000004 -73.3574253) (end 31.266845300000004 -78.3574253) (angle -33.80268668378767) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 31.2668453 -78.3574253) (end 44.75296704999999 -78.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 44.75296704999999 -78.3574253) (end 47.9933443 -80.5176768) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 50.7668453 -76.3574253) (end 50.7668453 -81.3574253) (angle -33.69006752597977) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 50.7668453 -81.3574253) (end 65.7668453 -81.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 65.7668453 -76.3574253) (end 67.1556602 -81.1606735) (angle -16.126737598910722) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 67.1556602 -81.1606735) (end 75.76764332963175 -78.67059795142826) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 75.76764332963175 -78.67059795142826) (end 90.20128509999999 -77.6612994) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 89.85250269999999 -72.6734791) (end 92.9309457 -76.6134269) (angle -34.00197228009459) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 92.9309457 -76.6134269) (end 98.45800405806658 -72.29490931592629) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 98.45800405806658 -72.29490931592629) (end 141.746202 -66.979787) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 141.1368553 -62.017056200000006) (end 146.0995861 -61.4077095) (angle -89.99999982707445) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 146.0995861 -61.4077095) (end 139.70719223425175 -9.345839689090326) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 139.70719223425175 -9.345839689090326) (end 148.4640069 7.5568832) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 144.0244231 9.856903899999999) (end 148.47945570000002 12.1268564) (angle -54.38737504533834) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 148.4794557 12.1268564) (end 138.26466939999997 32.174503099999995) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 133.80963679999996 29.9045506) (end 131.61216079999997 34.3957753) (angle -89.07167707188634) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 131.6121608 34.3957753) (end 84.181101684758 11.188605513472616) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 84.181101684758 11.188605513472616) (end -7.147863100000009 12.756440799999998) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start -7.233685 7.7571774) (end -12.230639100000001 7.9316749) (angle -88.98349483296829) (layer Edge.Cuts) (width 0.15))
-(gr_line (start -7.233685 7.7571774) (end 7.7571774 7.233685) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 7.7571774 7.233685) (end 7.233685000000001 -7.7571774) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 7.233685000000001 -7.7571774) (end -7.7571774 -7.233685000000001) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start -7.7571774 -7.233685000000001) (end -7.233685 7.7571774) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start -7.9142252 -11.730943700000001) (end 7.0766372 -12.2544361) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 7.0766372 -12.2544361) (end 6.553144800000002 -27.2452985) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 6.553144800000002 -27.2452985) (end -8.4377176 -26.721806100000002) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start -8.4377176 -26.721806100000002) (end -7.9142252 -11.730943700000001) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start -8.5947654 -31.2190648) (end 6.396096999999999 -31.7425572) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 6.396096999999999 -31.7425572) (end 5.872604600000001 -46.733419600000005) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 5.872604600000001 -46.733419600000005) (end -9.1182578 -46.2099272) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start -9.1182578 -46.2099272) (end -8.5947654 -31.2190648) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start -9.2753056 -50.7071859) (end 5.7155568 -51.2306783) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 5.7155568 -51.2306783) (end 5.192064400000001 -66.2215407) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 5.192064400000001 -66.2215407) (end -9.798798 -65.69804830000001) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start -9.798798 -65.69804830000001) (end -9.2753056 -50.7071859) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 12.1846371 5.0778555999999995) (end 27.1754995 4.5543632) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 27.1754995 4.5543632) (end 26.652007100000002 -10.4364992) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 26.652007100000002 -10.4364992) (end 11.661144700000001 -9.913006800000002) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 11.661144700000001 -9.913006800000002) (end 12.1846371 5.0778555999999995) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 11.5040969 -14.410265500000001) (end 26.4949593 -14.9337579) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 26.4949593 -14.9337579) (end 25.971466900000003 -29.9246203) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 25.971466900000003 -29.9246203) (end 10.980604500000002 -29.401127900000002) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 10.980604500000002 -29.401127900000002) (end 11.5040969 -14.410265500000001) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 10.823556700000001 -33.898386599999995) (end 25.814419100000002 -34.421879) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 25.814419100000002 -34.421879) (end 25.290926700000004 -49.4127414) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 25.290926700000004 -49.4127414) (end 10.300064300000003 -48.889249) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 10.300064300000003 -48.889249) (end 10.823556700000001 -33.898386599999995) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 10.143016500000002 -53.386507699999996) (end 25.133878900000003 -53.9100001) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 25.133878900000003 -53.9100001) (end 24.610386500000004 -68.9008625) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 24.610386500000004 -68.9008625) (end 9.619524100000003 -68.37737010000001) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 9.619524100000003 -68.37737010000001) (end 10.143016500000002 -53.386507699999996) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 31.2668453 0.14257469999999994) (end 46.2668453 0.14257469999999994) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 46.2668453 0.14257469999999994) (end 46.2668453 -14.8574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 46.2668453 -14.8574253) (end 31.2668453 -14.8574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 31.2668453 -14.8574253) (end 31.2668453 0.14257469999999994) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 31.2668453 -19.3574253) (end 46.2668453 -19.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 46.2668453 -19.3574253) (end 46.2668453 -34.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 46.2668453 -34.3574253) (end 31.2668453 -34.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 31.2668453 -34.3574253) (end 31.2668453 -19.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 31.2668453 -38.8574253) (end 46.2668453 -38.8574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 46.2668453 -38.8574253) (end 46.2668453 -53.8574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 46.2668453 -53.8574253) (end 31.2668453 -53.8574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 31.2668453 -53.8574253) (end 31.2668453 -38.8574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 31.2668453 -58.3574253) (end 46.2668453 -58.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 46.2668453 -58.3574253) (end 46.2668453 -73.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 46.2668453 -73.3574253) (end 31.2668453 -73.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 31.2668453 -73.3574253) (end 31.2668453 -58.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 50.7668453 -2.857425299999999) (end 65.7668453 -2.857425299999999) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 65.7668453 -2.857425299999999) (end 65.7668453 -17.8574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 65.7668453 -17.8574253) (end 50.7668453 -17.8574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 50.7668453 -17.8574253) (end 50.7668453 -2.857425299999999) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 50.7668453 -22.3574253) (end 65.7668453 -22.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 65.7668453 -22.3574253) (end 65.7668453 -37.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 65.7668453 -37.3574253) (end 50.7668453 -37.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 50.7668453 -37.3574253) (end 50.7668453 -22.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 50.7668453 -41.8574253) (end 65.7668453 -41.8574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 65.7668453 -41.8574253) (end 65.7668453 -56.8574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 65.7668453 -56.8574253) (end 50.7668453 -56.8574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 50.7668453 -56.8574253) (end 50.7668453 -41.8574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 50.7668453 -61.3574253) (end 65.7668453 -61.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 65.7668453 -61.3574253) (end 65.7668453 -76.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 65.7668453 -76.3574253) (end 50.7668453 -76.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 50.7668453 -76.3574253) (end 50.7668453 -61.3574253) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 71.1221925 -19.8513675) (end 86.0856532 -18.805020399999997) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 86.0856532 -18.805020399999997) (end 87.1320003 -33.7684811) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 87.1320003 -33.7684811) (end 72.1685396 -34.8148282) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 72.1685396 -34.8148282) (end 71.1221925 -19.8513675) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 72.48244369999999 -39.3038665) (end 87.44590439999999 -38.25751939999999) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 87.44590439999999 -38.25751939999999) (end 88.4922515 -53.22098009999999) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 88.4922515 -53.22098009999999) (end 73.5287908 -54.2673272) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 73.5287908 -54.2673272) (end 72.48244369999999 -39.3038665) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 73.84269489999998 -58.7563655) (end 88.80615559999998 -57.710018399999996) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 88.80615559999998 -57.710018399999996) (end 89.85250269999999 -72.6734791) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 89.85250269999999 -72.6734791) (end 74.88904199999999 -73.7198262) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 74.88904199999999 -73.7198262) (end 73.84269489999998 -58.7563655) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 89.8913339 -13.903684300000002) (end 104.7795262 -12.075644200000001) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 104.7795262 -12.075644200000001) (end 106.6075663 -26.9638365) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 106.6075663 -26.9638365) (end 91.719374 -28.791876600000002) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 91.719374 -28.791876600000002) (end 89.8913339 -13.903684300000002) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 92.26778610000001 -33.2583343) (end 107.15597840000001 -31.430294200000006) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 107.15597840000001 -31.430294200000006) (end 108.9840185 -46.318486500000006) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 108.9840185 -46.318486500000006) (end 94.0958262 -48.1465266) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 94.0958262 -48.1465266) (end 92.26778610000001 -33.2583343) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 94.64423830000001 -52.6129843) (end 109.53243060000001 -50.784944200000005) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 109.53243060000001 -50.784944200000005) (end 111.36047070000001 -65.6731365) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 111.36047070000001 -65.6731365) (end 96.47227840000001 -67.50117660000001) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 96.47227840000001 -67.50117660000001) (end 94.64423830000001 -52.6129843) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 85.29804279999999 6.168694399999998) (end 98.6631407 12.9785519) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 98.6631407 12.9785519) (end 105.4729982 -0.38654600000000094) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 105.4729982 -0.38654600000000094) (end 92.1079003 -7.196403500000002) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 92.1079003 -7.196403500000002) (end 85.29804279999999 6.168694399999998) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 104.7723761 10.900603899999998) (end 118.13747400000001 17.7104614) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 118.13747400000001 17.7104614) (end 124.94733150000002 4.3453634999999995) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 124.94733150000002 4.3453634999999995) (end 111.58223360000001 -2.464494000000002) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 111.58223360000001 -2.464494000000002) (end 104.7723761 10.900603899999998) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 122.1470033 19.753418699999997) (end 135.5121012 26.5632762) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 135.5121012 26.5632762) (end 142.32195869999998 13.1981783) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 142.32195869999998 13.1981783) (end 128.9568608 6.388320799999999) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 128.9568608 6.388320799999999) (end 122.1470033 19.753418699999997) (angle 90) (layer Edge.Cuts) (width 0.15))
+
+  (module lib:niceview (layer F.Cu)
+  (at 272.9710666 129.64327470000003 -7)
+
+          
+  (fp_text reference "OLED1" (at 0 -17.27 -7) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+  (fp_text value "nice!view" (at 0 14.4 -7) (layer F.Fab) (effects (font (size 1 1) (thickness 0.15))))
+  
+  
+  (fp_rect (start -6.35 15.18) (end 6.35 17.78) (layer "F.SilkS") (width 0.12) (fill none))
+  (fp_rect (start 7 17.78) (end -6.68 -18.22) (layer "Dwgs.User") (width 0.12) (fill none))
+  (fp_rect (start 7 17.78) (end -6.68 -18.22) (layer "F.Fab") (width 0.12) (fill none))
+
+  
+  (pad 1 thru_hole circle (at -5.08 16.48 263) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) 
+  (net 40 "P2"))
+  (pad 2 thru_hole circle (at -2.54 16.48 263) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask)
+  (net 41 "P3"))
+  (pad 3 thru_hole circle (at 0 16.48 263) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask)
+  (net 29 "VCC"))
+  (pad 4 thru_hole circle (at 2.54 16.48 263) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) 
+  (net 27 "GND"))
+  (pad 5 thru_hole circle (at 5.08 16.48 263) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) 
+  (net 38 "P1"))
+  )
+  
+
+    
+    (module JST_PH_S2B-PH-K_02x2.00mm_Angled (layer F.Cu) (tedit 58D3FE32)
+
+        (descr "JST PH series connector, S2B-PH-K, side entry type, through hole, Datasheet: http://www.jst-mfg.com/product/pdf/eng/ePH.pdf")
+        (tags "connector jst ph")
+
+        (at 272.3359681 151.2267557 83)
+
+        
+        (fp_text reference "JST1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+
+        (fp_line (start -2.25 0.25) (end -2.25 -1.35) (layer F.SilkS) (width 0.15))
+        (fp_line (start -2.25 -1.35) (end -2.95 -1.35) (layer F.SilkS) (width 0.15))
+        (fp_line (start -2.95 -1.35) (end -2.95 6.25) (layer F.SilkS) (width 0.15))
+        (fp_line (start -2.95 6.25) (end 2.95 6.25) (layer F.SilkS) (width 0.15))
+        (fp_line (start 2.95 6.25) (end 2.95 -1.35) (layer F.SilkS) (width 0.15))
+        (fp_line (start 2.95 -1.35) (end 2.25 -1.35) (layer F.SilkS) (width 0.15))
+        (fp_line (start 2.25 -1.35) (end 2.25 0.25) (layer F.SilkS) (width 0.15))
+        (fp_line (start 2.25 0.25) (end -2.25 0.25) (layer F.SilkS) (width 0.15))
+
+        (fp_line (start -1 1.5) (end -1 2.0) (layer F.SilkS) (width 0.15))
+        (fp_line (start -1.25 1.75) (end -0.75 1.75) (layer F.SilkS) (width 0.15))
+
+        (pad 1 thru_hole rect (at -1 0 83) (size 1.2 1.7) (drill 0.75) (layers *.Cu *.Mask) (net 29 "VCC"))
+        (pad 2 thru_hole oval (at 1 0 83) (size 1.2 1.7) (drill 0.75) (layers *.Cu *.Mask) (net 27 "GND"))
+            
+    )
+    
+    
+
+    
+    (module E73:SW_TACT_ALPS_SKQGABE010 (layer F.Cu) (tstamp 5BF2CC94)
+
+        (descr "Low-profile SMD Tactile Switch, https://www.e-switch.com/product-catalog/tact/product-lines/tl3342-series-low-profile-smt-tact-switch")
+        (tags "SPST Tactile Switch")
+
+        (at 273.8031157 155.68881550000003 -7)
+        
+        (fp_text reference "B1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        
+        
+        (fp_line (start 2.75 1.25) (end 1.25 2.75) (layer F.SilkS) (width 0.15))
+        (fp_line (start 2.75 -1.25) (end 1.25 -2.75) (layer F.SilkS) (width 0.15))
+        (fp_line (start 2.75 -1.25) (end 2.75 1.25) (layer F.SilkS) (width 0.15))
+        (fp_line (start -1.25 2.75) (end 1.25 2.75) (layer F.SilkS) (width 0.15))
+        (fp_line (start -1.25 -2.75) (end 1.25 -2.75) (layer F.SilkS) (width 0.15))
+        (fp_line (start -2.75 1.25) (end -1.25 2.75) (layer F.SilkS) (width 0.15))
+        (fp_line (start -2.75 -1.25) (end -1.25 -2.75) (layer F.SilkS) (width 0.15))
+        (fp_line (start -2.75 -1.25) (end -2.75 1.25) (layer F.SilkS) (width 0.15))
+        
+        
+        (pad 1 smd rect (at -3.1 -1.85 -7) (size 1.8 1.1) (layers F.Cu F.Paste F.Mask) (net 27 "GND"))
+        (pad 1 smd rect (at 3.1 -1.85 -7) (size 1.8 1.1) (layers F.Cu F.Paste F.Mask) (net 27 "GND"))
+        (pad 2 smd rect (at -3.1 1.85 -7) (size 1.8 1.1) (layers F.Cu F.Paste F.Mask) (net 28 "RST"))
+        (pad 2 smd rect (at 3.1 1.85 -7) (size 1.8 1.1) (layers F.Cu F.Paste F.Mask) (net 28 "RST"))
+    )
+    
+    
+            (gr_line (start 137.76936089999998 182.9316749) (end 135.20424789999998 109.47644919999999) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 140.201202 109.30195169999999) (end 140.0267045 104.3049976) (angle -89.9999997935371) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 140.02670450000002 104.30499760000001) (end 153.9571410883864 103.81853608176858) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 153.9571410883864 103.81853608176858) (end 157.42971190000003 102.12766350000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 159.61952410000004 106.6226299) (end 159.44502660000003 101.62567580000001) (angle -23.973948463505977) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 159.44502660000003 101.62567580000001) (end 173.0123425031031 101.15189473429737) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 173.0123425031031 101.15189473429737) (end 178.48517240000004 97.48778279999999) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 181.26684530000003 101.6425747) (end 181.26684530000003 96.6425747) (angle -33.802686683787414) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 181.2668453 96.64257470000001) (end 194.75296704999997 96.64257470000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 194.75296704999997 96.64257470000001) (end 197.9933443 94.48232320000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 200.7668453 98.64257470000001) (end 200.7668453 93.64257470000001) (angle -33.69006752597977) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 200.7668453 93.64257470000001) (end 215.7668453 93.64257470000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 215.7668453 98.64257470000001) (end 217.1556602 93.83932650000001) (angle -16.126737598910722) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 217.1556602 93.83932650000001) (end 225.7676433296318 96.32940204857178) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 225.7676433296318 96.32940204857178) (end 240.20128509999998 97.33870060000002) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 239.8525027 102.32652090000003) (end 242.9309457 98.38657310000004) (angle -34.001972280094364) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 242.93094569999997 98.38657310000004) (end 248.45800406215483 102.70509068726805) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 248.45800406215483 102.70509068726803) (end 284.30210579999994 107.10619300000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 283.6927591 112.06892380000004) (end 288.65548989999996 112.67827050000004) (angle -89.99999971666445) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 288.65548989999996 112.67827050000004) (end 282.3483313516338 164.04595504744157) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 282.3483313516338 164.0459550474411) (end 297.7755682 181.55101360000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 294.0244231 184.85690390000002) (end 298.47945569999996 187.1268564) (angle -68.38978054083378) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 298.47945569999996 187.1268564) (end 288.2646694 207.1745031) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 283.80963679999996 204.90455060000002) (end 281.61216079999997 209.39577530000003) (angle -89.07167707188646) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 281.61216079999997 209.39577530000003) (end 234.18110168475798 186.18860551347265) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 234.18110168475798 186.18860551347265) (end 142.8521369 187.7564408) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 142.766315 182.7571774) (end 137.76936089999998 182.9316749) (angle -88.98349483296857) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 142.766315 182.7571774) (end 157.7571774 182.233685) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 157.7571774 182.233685) (end 157.233685 167.2428226) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 157.233685 167.2428226) (end 142.2428226 167.766315) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 142.2428226 167.766315) (end 142.766315 182.7571774) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 142.0857748 163.2690563) (end 157.0766372 162.7455639) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 157.0766372 162.7455639) (end 156.5531448 147.7547015) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 156.5531448 147.7547015) (end 141.56228240000002 148.2781939) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 141.56228240000002 148.2781939) (end 142.0857748 163.2690563) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 141.4052346 143.7809352) (end 156.396097 143.2574428) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 156.396097 143.2574428) (end 155.87260460000002 128.2665804) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 155.87260460000002 128.2665804) (end 140.88174220000002 128.7900728) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 140.88174220000002 128.7900728) (end 141.4052346 143.7809352) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 140.7246944 124.2928141) (end 155.7155568 123.76932169999999) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 155.7155568 123.76932169999999) (end 155.19206440000002 108.7784593) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 155.19206440000002 108.7784593) (end 140.20120200000002 109.30195169999999) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 140.20120200000002 109.30195169999999) (end 140.7246944 124.2928141) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 162.1846371 180.0778556) (end 177.1754995 179.5543632) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 177.1754995 179.5543632) (end 176.65200710000002 164.5635008) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 176.65200710000002 164.5635008) (end 161.66114470000002 165.0869932) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 161.66114470000002 165.0869932) (end 162.1846371 180.0778556) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 161.5040969 160.5897345) (end 176.4949593 160.0662421) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 176.4949593 160.0662421) (end 175.97146690000002 145.0753797) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 175.97146690000002 145.0753797) (end 160.98060450000003 145.5988721) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 160.98060450000003 145.5988721) (end 161.5040969 160.5897345) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 160.8235567 141.1016134) (end 175.8144191 140.578121) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 175.8144191 140.578121) (end 175.29092670000003 125.5872586) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 175.29092670000003 125.5872586) (end 160.30006430000003 126.110751) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 160.30006430000003 126.110751) (end 160.8235567 141.1016134) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 160.14301650000002 121.6134923) (end 175.1338789 121.0899999) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 175.1338789 121.0899999) (end 174.61038650000003 106.0991375) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 174.61038650000003 106.0991375) (end 159.61952410000004 106.62262989999999) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 159.61952410000004 106.62262989999999) (end 160.14301650000002 121.6134923) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 181.2668453 175.1425747) (end 196.2668453 175.1425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 196.2668453 175.1425747) (end 196.2668453 160.1425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 196.2668453 160.1425747) (end 181.2668453 160.1425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 181.2668453 160.1425747) (end 181.2668453 175.1425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 181.2668453 155.6425747) (end 196.2668453 155.6425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 196.2668453 155.6425747) (end 196.2668453 140.6425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 196.2668453 140.6425747) (end 181.2668453 140.6425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 181.2668453 140.6425747) (end 181.2668453 155.6425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 181.2668453 136.1425747) (end 196.2668453 136.1425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 196.2668453 136.1425747) (end 196.2668453 121.14257470000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 196.2668453 121.14257470000001) (end 181.2668453 121.14257470000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 181.2668453 121.14257470000001) (end 181.2668453 136.1425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 181.2668453 116.64257470000001) (end 196.2668453 116.64257470000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 196.2668453 116.64257470000001) (end 196.2668453 101.64257470000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 196.2668453 101.64257470000001) (end 181.2668453 101.64257470000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 181.2668453 101.64257470000001) (end 181.2668453 116.64257470000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 200.7668453 172.1425747) (end 215.7668453 172.1425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 215.7668453 172.1425747) (end 215.7668453 157.1425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 215.7668453 157.1425747) (end 200.7668453 157.1425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 200.7668453 157.1425747) (end 200.7668453 172.1425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 200.7668453 152.6425747) (end 215.7668453 152.6425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 215.7668453 152.6425747) (end 215.7668453 137.6425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 215.7668453 137.6425747) (end 200.7668453 137.6425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 200.7668453 137.6425747) (end 200.7668453 152.6425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 200.7668453 133.1425747) (end 215.7668453 133.1425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 215.7668453 133.1425747) (end 215.7668453 118.14257470000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 215.7668453 118.14257470000001) (end 200.7668453 118.14257470000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 200.7668453 118.14257470000001) (end 200.7668453 133.1425747) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 200.7668453 113.64257470000001) (end 215.7668453 113.64257470000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 215.7668453 113.64257470000001) (end 215.7668453 98.64257470000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 215.7668453 98.64257470000001) (end 200.7668453 98.64257470000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 200.7668453 98.64257470000001) (end 200.7668453 113.64257470000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 221.1221925 155.14863250000002) (end 236.0856532 156.1949796) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 236.0856532 156.1949796) (end 237.1320003 141.23151890000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 237.1320003 141.23151890000003) (end 222.1685396 140.18517180000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 222.1685396 140.18517180000003) (end 221.1221925 155.14863250000002) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 222.4824437 135.69613350000003) (end 237.4459044 136.74248060000002) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 237.4459044 136.74248060000002) (end 238.49225149999998 121.77901990000004) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 238.49225149999998 121.77901990000004) (end 223.5287908 120.73267280000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 223.5287908 120.73267280000003) (end 222.4824437 135.69613350000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 223.8426949 116.24363450000003) (end 238.80615559999998 117.28998160000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 238.80615559999998 117.28998160000003) (end 239.85250269999997 102.32652090000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 239.85250269999997 102.32652090000003) (end 224.889042 101.28017380000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 224.889042 101.28017380000003) (end 223.8426949 116.24363450000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 239.89133389999998 161.09631570000002) (end 254.7795262 162.92435580000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 254.7795262 162.92435580000003) (end 256.6075663 148.03616350000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 256.6075663 148.03616350000001) (end 241.719374 146.2081234) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 241.719374 146.2081234) (end 239.89133389999998 161.09631570000002) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 242.26778609999997 141.74166570000003) (end 257.1559784 143.56970580000004) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 257.1559784 143.56970580000004) (end 258.9840185 128.68151350000002) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 258.9840185 128.68151350000002) (end 244.09582619999998 126.85347340000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 244.09582619999998 126.85347340000003) (end 242.26778609999997 141.74166570000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 244.64423829999996 122.38701570000003) (end 259.53243059999994 124.21505580000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 259.53243059999994 124.21505580000003) (end 261.36047069999995 109.32686350000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 261.36047069999995 109.32686350000003) (end 246.47227839999996 107.49882340000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 246.47227839999996 107.49882340000003) (end 244.64423829999996 122.38701570000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 235.2980428 181.16869440000002) (end 248.66314069999999 187.9785519) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 248.66314069999999 187.9785519) (end 255.47299819999998 174.61345400000002) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 255.47299819999998 174.61345400000002) (end 242.10790029999998 167.80359650000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 242.10790029999998 167.80359650000003) (end 235.2980428 181.16869440000002) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 254.7723761 185.90060390000002) (end 268.137474 192.7104614) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 268.137474 192.7104614) (end 274.9473315 179.34536350000002) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 274.9473315 179.34536350000002) (end 261.5822336 172.53550600000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 261.5822336 172.53550600000003) (end 254.7723761 185.90060390000002) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 272.14700329999994 194.75341870000003) (end 285.51210119999996 201.56327620000002) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 285.51210119999996 201.56327620000002) (end 292.3219587 188.19817830000002) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 292.3219587 188.19817830000002) (end 278.95686079999996 181.38832080000003) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 278.95686079999996 181.38832080000003) (end 272.14700329999994 194.75341870000003) (angle 90) (layer Edge.Cuts) (width 0.15))
             
 )
 

@@ -10,6 +10,8 @@ points:
     padding: kp
   zones:
     matrix:
+      anchor:
+        shift: [150, -175]
       columns:
         outer:
           key.splay: 2
@@ -84,9 +86,9 @@ outlines:
         - ref: matrix_inner_top
           shift: [-0.5ks, 0.5ks]
         - ref: matrix_inner_top
-          shift: [2.5ks, 0.5ks]
+          shift: [2ks, 0.5ks]
         - ref: matrix_inner_bottom
-          shift: [2.5ks, -0.5ks]
+          shift: [2ks, -0.5ks]
         - ref: thumbfan_inner
           shift: [0.5ks, 0.75ks]
         - ref: thumbfan_inner
@@ -116,7 +118,7 @@ pcbs:
         where: true
         params:
           keycaps: true
-          reverse: false
+          reverse: true
           hotswap: true
           from: "{{column_net}}"
           to: "{{colrow}}"
@@ -134,5 +136,32 @@ pcbs:
           orientation: "down"
         where:
           ref: matrix_inner_top
-          shift: [1.5kc, -0.5kc]
+          shift: [1kc + 3, -0.5kc]
           rotate: -90
+      niceview:
+        what: niceview
+        params:
+          side: "F"
+          MOSI: P2
+          SCK: P3
+          CS: P1
+        where:
+          ref: matrix_inner_top
+          shift: [1kc + 3, -0.5kc - 2]
+      jstph:
+        what: jstph
+        params:
+          pos: VCC
+          neg: GND
+        where:
+          ref: matrix_inner_bottom
+          shift: [1kc + 5, 0.5kc - 3]
+          rotate: 90
+      reset:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: matrix_inner_top
+          shift: [1kc + 7, -2kc]

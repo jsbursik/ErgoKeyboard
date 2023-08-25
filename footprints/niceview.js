@@ -1,3 +1,41 @@
+module.exports = {
+  params: {
+    designator: "OLED",
+    side: "F",
+    VCC: { type: "net", value: "VCC" },
+    GND: { type: "net", value: "GND" },
+    MOSI: undefined,
+    SCK: undefined,
+    CS: undefined,
+  },
+  body: (p) => `
+  (module lib:niceview (layer F.Cu)
+  ${p.at /* parametric position */}
+
+  ${"" /* footprint reference */}        
+  (fp_text reference "${p.ref}" (at 0 -17.27 ${p.rot}) (layer F.SilkS) ${p.ref_hide} (effects (font (size 1.27 1.27) (thickness 0.15))))
+  (fp_text value "nice!view" (at 0 14.4 ${p.rot}) (layer F.Fab) (effects (font (size 1 1) (thickness 0.15))))
+  
+  ${"" /* display footprint */}
+  (fp_rect (start -6.35 15.18) (end 6.35 17.78) (layer "F.SilkS") (width 0.12) (fill none))
+  (fp_rect (start 7 17.78) (end -6.68 -18.22) (layer "Dwgs.User") (width 0.12) (fill none))
+  (fp_rect (start 7 17.78) (end -6.68 -18.22) (layer "F.Fab") (width 0.12) (fill none))
+
+  ${"" /* pins */}
+  (pad 1 thru_hole circle (at -5.08 16.48 ${p.rot + 270}) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) 
+  ${p.MOSI.str})
+  (pad 2 thru_hole circle (at -2.54 16.48 ${p.rot + 270}) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask)
+  ${p.SCK.str})
+  (pad 3 thru_hole circle (at 0 16.48 ${p.rot + 270}) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask)
+  ${p.VCC.str})
+  (pad 4 thru_hole circle (at 2.54 16.48 ${p.rot + 270}) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) 
+  ${p.GND.str})
+  (pad 5 thru_hole circle (at 5.08 16.48 ${p.rot + 270}) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) 
+  ${p.CS.str})
+  )
+  `,
+};
+
 /*
 (footprint "nice_view" (version 20211014) (generator pcbnew)
   (layer "F.Cu")

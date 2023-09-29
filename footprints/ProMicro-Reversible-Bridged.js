@@ -29,62 +29,127 @@ module.exports = {
     P9: { type: "net", value: "P9" },
   },
   body: (p) => {
-    const num_pins = 24;
-    let params = {
-      sockets_x_start: -13.97,
-      sockets_y: 7.62,
-    };
-    for (let i = 1; i <= num_pins; i++) {}
+    let output = "";
+    for (let i = 1; i <= 24; i++) {
+      let X = -13.97 + i * 2.54;
+      let Y = i <= 12 ? -7.62 : 7.62;
+      let sign = i <= 12 ? 1 : -1;
+      output += `
+        ${"" /* Thru-hole for MCU pin */}
+        (pad "" thru_hole circle (at ${X} ${Y}) (size 1.6 1.6) (drill 1.1) (layers *.Cu *.Mask))
+
+        ${"" /* SMD Pads from MCU pin to Bridge (F and B Copper doesn't break mask) */}
+        (pad "" smd custom (at ${X} ${Y + 1.27 * sign}) (size 0.25 1) (layers F.Cu) (zone_connect 0) (options (clearance outline) (anchor rect)) (primitives))
+        (pad "" smd custom (at ${X} ${Y + 1.27 * sign}) (size 0.25 1) (layers B.Cu) (zone_connect 0) (options (clearance outline) (anchor rect)) (primitives))
+
+        ${"" /* Bridge Pad FROM MCU pin */}
+        (pad "" smd custom (at ${X} ${Y + 1.778 * sign}) (size 0.1 0.1) (layers F.Cu F.Mask)
+            (clearance 0.1) (zone_connect 0)
+            (options (clearance outline) (anchor rect))
+            (primitives (gr_poly (pts (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)) (width 0)))
+        )
+        (pad "" smd custom (at ${X} ${Y + 1.778 * sign}) (size 0.1 0.1) (layers B.Cu B.Mask)
+            (clearance 0.1) (zone_connect 0)
+            (options (clearance outline) (anchor rect))
+            (primitives (gr_poly (pts (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)) (width 0)))
+        )
+
+        ${"" /* Mask hole for bridge */}
+        (fp_rect (start ${X - 0.508} ${Y + 1.524}) (end ${X + 0.508} ${Y + 2.54}) (stroke (width 0.1) (type solid)) (fill solid) (layer "F.Mask"))
+        (fp_rect (start ${X - 0.508} ${Y + 1.524}) (end ${X + 0.508} ${Y + 2.54}) (stroke (width 0.1) (type solid)) (fill solid) (layer "B.Mask"))
+
+        ${"" /* Bridge Pad TO via */}
+        (pad ${i} smd custom (at ${X} ${Y + 2.794 * sign}) (size 1.2 0.5) (layers F.Cu F.Mask)
+            (clearance 0.1) (zone_connect 0)
+            (options (clearance outline) (anchor rect))
+            (primitives (gr_poly (pts (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)) (width 0)))
+        )
+        (pad ${i} smd custom (at ${X} ${Y + 2.794 * sign}) (size 1.2 0.5) (layers B.Cu B.Mask)
+            (clearance 0.1) (zone_connect 0)
+            (options (clearance outline) (anchor rect))
+            (primitives (gr_poly (pts (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)) (width 0)))
+        )
+
+        ${"" /* VIA */}
+        (pad ${i} thru_hole circle (at ${X} ${Y + 6.858 * sign}) (size 0.8 0.8) (drill 0.4) (layers *.Cu))
+
+        ${"" /* Mask breakthrough for VIA (Just in case) */}
+        (fp_circle (center ${X} ${Y + 6.858 * sign}) (end ${X + 0.125} ${Y}) (layer F.Mask) (width 0.25))
+        (fp_circle (center ${X} ${Y + 6.858 * sign}) (end ${X + 0.125} ${Y}) (layer B.Mask) (width 0.25))
+
+        ${"" /* FRONT SMD Pad to VIA */}
+        (pad ${i} smd custom (at ${X} ${Y + 6.858 * sign}) (size 0.25 0.25) (layers F.Cu)
+            (zone_connect 0)
+            (options (clearance outline) (anchor circle))
+            (primitives
+              (gr_line (start 0 0) (end 0.766 -0.766) (width 0.25))
+              (gr_line (start 0.766 -0.766) (end 0.766 -3.298) (width 0.25))
+              (gr_line (start 0.766 -3.298) (end 0 -4.064) (width 0.25))
+            ))
+            
+        ${"" /* BACK SMD Pad FROM VIA to SAME PIN NUM on the opposite side */}
+        (pad ${i} smd custom (at ${X} ${Y + 6.858 * sign}) (size 0.25 0.25) (layers B.Cu)
+            (zone_connect 0)
+            (options (clearance outline) (anchor circle))
+            (primitives
+              (gr_line (start 0 0) (end -0.766 0.766) (width 0.25))
+              (gr_line (start -0.766 0.766) (end -0.766 4.822) (width 0.25))
+              (gr_line (start -0.766 4.822) (end 0 5.588) (width 0.25))
+            ))
+      `;
+    }
   },
 };
 
 /*
 Mapping out A single pin > bridge > VIA so I can just make all 24 pins programmatically
 
+X & Y == 0
+
 Thru-hole for MCU pin
-(pad "" thru_hole circle (at X Y) (size 1.6 1.6) (drill 1.1) (layers *.Cu *.Mask))
+(pad "" thru_hole circle (at ${X} ${Y}) (size 1.6 1.6) (drill 1.1) (layers *.Cu *.Mask))
 
 SMD Pads from MCU pin to Bridge (F and B Copper doesn't break mask)
-(pad "" smd custom (at X Y) (size 0.25 1) (layers F.Cu) (zone_connect 0) (options (clearance outline) (anchor rect)) (primitives))
-(pad "" smd custom (at X Y) (size 0.25 1) (layers B.Cu) (zone_connect 0) (options (clearance outline) (anchor rect)) (primitives))
+(pad "" smd custom (at ${X} ${Y + 1.27}) (size 0.25 1) (layers F.Cu) (zone_connect 0) (options (clearance outline) (anchor rect)) (primitives))
+(pad "" smd custom (at ${X} ${Y + 1.27}) (size 0.25 1) (layers B.Cu) (zone_connect 0) (options (clearance outline) (anchor rect)) (primitives))
 
 Bridge Pad FROM MCU pin
-(pad "" smd custom (at {X} {Y}) (size 0.1 0.1) (layers F.Cu F.Mask)
+(pad "" smd custom (at ${X} ${Y + 1.778}) (size 0.1 0.1) (layers F.Cu F.Mask)
     (clearance 0.1) (zone_connect 0)
     (options (clearance outline) (anchor rect))
     (primitives (gr_poly (pts (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)) (width 0)))
 )
-(pad "" smd custom (at {X} {Y}) (size 0.1 0.1) (layers B.Cu B.Mask)
+(pad "" smd custom (at ${X} ${Y + 1.778}) (size 0.1 0.1) (layers B.Cu B.Mask)
     (clearance 0.1) (zone_connect 0)
     (options (clearance outline) (anchor rect))
     (primitives (gr_poly (pts (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)) (width 0)))
 )
 
 Mask hole for bridge
-(fp_rect (start {X} {Y}) (end {X+1.016} {Y+1.016}) (stroke (width 0.1) (type solid)) (fill solid) (layer "F.Mask"))
-(fp_rect (start {X} {Y}) (end {X+1.016} {Y+1.016}) (stroke (width 0.1) (type solid)) (fill solid) (layer "B.Mask"))
+(fp_rect (start ${X - 0.508} ${Y + 1.524}) (end ${X + 0.508} ${Y + 2.54}) (stroke (width 0.1) (type solid)) (fill solid) (layer "F.Mask"))
+(fp_rect (start ${X - 0.508} ${Y + 1.524}) (end ${X + 0.508} ${Y + 2.54}) (stroke (width 0.1) (type solid)) (fill solid) (layer "B.Mask"))
 
 Bridge Pad TO via
-(pad {NUM} smd custom (at {X} {Y}) (size 1.2 0.5) (layers F.Cu F.Mask)
+(pad ${NUM} smd custom (at ${X} ${Y + 2.794}) (size 1.2 0.5) (layers F.Cu F.Mask)
     (clearance 0.1) (zone_connect 0)
     (options (clearance outline) (anchor rect))
     (primitives (gr_poly (pts (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)) (width 0)))
 )
-(pad {NUM} smd custom (at {X} {Y}) (size 1.2 0.5) (layers B.Cu B.Mask)
+(pad ${NUM} smd custom (at ${X} ${Y + 2.794}) (size 1.2 0.5) (layers B.Cu B.Mask)
     (clearance 0.1) (zone_connect 0)
     (options (clearance outline) (anchor rect))
     (primitives (gr_poly (pts (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)) (width 0)))
 )
 
 VIA
-(pad {NUM} thru_hole circle (at {X}} {Y}) (size 0.8 0.8) (drill 0.4) (layers *.Cu))
+(pad ${NUM} thru_hole circle (at ${X} ${Y + 6.858}) (size 0.8 0.8) (drill 0.4) (layers *.Cu))
 
 Mask breakthrough for VIA (Just in case)
-(fp_circle (center {X} {Y}) (end {X+0.125} {Y}) (layer F.Mask) (width 0.25))
-(fp_circle (center {X} {Y}) (end {X+0.125} {Y}) (layer B.Mask) (width 0.25))
+(fp_circle (center ${X} ${Y + 6.858}) (end ${X + 0.125} ${Y}) (layer F.Mask) (width 0.25))
+(fp_circle (center ${X} ${Y + 6.858}) (end ${X + 0.125} ${Y}) (layer B.Mask) (width 0.25))
 
 FRONT SMD Pad to VIA
-(pad {NUM} smd custom (at {X} {Y}) (size 0.25 0.25) (layers F.Cu)
+(pad ${NUM} smd custom (at ${X} ${Y + 6.858}) (size 0.25 0.25) (layers F.Cu)
     (zone_connect 0)
     (options (clearance outline) (anchor circle))
     (primitives
@@ -94,7 +159,7 @@ FRONT SMD Pad to VIA
     ))
 
 BACK SMD Pad FROM VIA to SAME PIN NUM on the opposite side
-(pad {NUM} smd custom (at {X} {Y}) (size 0.25 0.25) (layers B.Cu)
+(pad ${NUM} smd custom (at ${X} ${Y + 6.858}) (size 0.25 0.25) (layers B.Cu)
     (zone_connect 0)
     (options (clearance outline) (anchor circle))
     (primitives
@@ -102,5 +167,4 @@ BACK SMD Pad FROM VIA to SAME PIN NUM on the opposite side
       (gr_line (start -0.766 0.766) (end -0.766 4.822) (width 0.25))
       (gr_line (start -0.766 4.822) (end 0 5.588) (width 0.25))
     ))
-
 */

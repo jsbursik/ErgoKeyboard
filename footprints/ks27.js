@@ -14,11 +14,11 @@ module.exports = {
       ${p.at /* parametric position */}
       
       ${"" /* footprint reference */}
-      (fp_text reference "${p.ref}" (at 0.1 -8.5 unlocked) (layer "F.SilkS") ${p.ref_hide}
+      (fp_text reference "${p.ref}" (at 0.1 -8.5 ${p.rot}) (layer "F.SilkS") ${p.ref_hide}
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27" (at 0 8.5 unlocked) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 ${p.rot}) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       )
     

@@ -86,9 +86,9 @@ outlines:
         - ref: matrix_inner_top
           shift: [-0.5ks, 0.5ks]
         - ref: matrix_inner_top
-          shift: [2ks, 0.5ks]
+          shift: [2.4ks - 1, 0.5ks]
         - ref: matrix_inner_bottom
-          shift: [2ks, -0.5ks]
+          shift: [2.4ks, -0.5ks]
         - ref: thumbfan_inner
           shift: [0.5ks, 0.75ks]
         - ref: thumbfan_inner
@@ -130,10 +130,8 @@ pcbs:
           to: "{{row_net}}"
         adjust:
           shift: [0, 10]
-      nicenano:
-        what: nicenano
-        params:
-          orientation: "down"
+      revmicro:
+        what: revmicro
         where:
           ref: matrix_inner_top
           shift: [1kc + 3, -0.5kc]
@@ -154,9 +152,9 @@ pcbs:
           pos: VCC
           neg: GND
         where:
-          ref: matrix_inner_bottom
-          shift: [1kc + 5, 0.5kc - 3]
-          rotate: 90
+          ref: matrix_inner_home
+          shift: [2kc + 2, 0.5kc - 3]
+          rotate: 180
       reset:
         what: button
         params:

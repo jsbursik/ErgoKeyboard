@@ -86,7 +86,7 @@ outlines:
         - ref: matrix_inner_top
           shift: [-0.5ks, 0.5ks]
         - ref: matrix_inner_top
-          shift: [2.4ks - 1, 0.5ks]
+          shift: [2.4ks, 0.5ks]
         - ref: matrix_inner_bottom
           shift: [2.4ks, -0.5ks]
         - ref: thumbfan_inner
@@ -140,6 +140,7 @@ pcbs:
         what: niceview
         params:
           side: "F"
+          reverse: true
           MOSI: P2
           SCK: P3
           CS: P1
@@ -149,7 +150,7 @@ pcbs:
       jstph:
         what: jstph
         params:
-          pos: VCC
+          pos: BPOS
           neg: GND
         where:
           ref: matrix_inner_home
@@ -158,27 +159,47 @@ pcbs:
       jstph_rev:
         what: jstph
         params:
-          pos: VCC
-          neg: GND
           side: B
+          pos: BPOS
+          neg: GND
         where:
           ref: matrix_inner_home
           shift: [2kc - 3, -8]
           rotate: 180
-      jumper:
-        what: jumper
+      slider:
+        what: slider
         params:
           side: F
-          from: P2
-          to: MOSI
+          from: BPOS
+          to: VCC
         where:
-          ref: matrix_inner_top
-          shift: [1kc, 0.5kc]
-      reset:
+          ref: matrix_inner_bottom
+          shift: [2kc + 2, 0]
+          rotate: -90
+      back-slider:
+        what: slider
+        params:
+          side: B
+          from: BPOS
+          to: VCC
+        where:
+          ref: matrix_inner_bottom
+          shift: [2kc + 2, 0]
+          rotate: -90
+      reset-left:
         what: button
         params:
           from: GND
           to: RST
         where:
-          ref: matrix_inner_top
-          shift: [1kc + 7, -2kc]
+          ref: matrix_inner_bottom
+          shift: [1.5kc + 1, 0]
+      reset-right:
+        what: button
+        params:
+          from: GND
+          to: RST
+          side: B
+        where:
+          ref: matrix_inner_bottom
+          shift: [1.5kc + 1, 0]

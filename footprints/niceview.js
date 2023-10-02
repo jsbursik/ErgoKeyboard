@@ -4,9 +4,9 @@ module.exports = {
     side: "F",
     VCC: { type: "net", value: "VCC" },
     GND: { type: "net", value: "GND" },
-    MOSI: undefined,
-    SCK: undefined,
-    CS: undefined,
+    MOSI: { type: "net", value: "MOSI" },
+    SCK: { type: "net", value: "SCK" },
+    CS: { type: "net", value: "CS" },
   },
   body: (p) => `
   (module lib:niceview (layer F.Cu)

@@ -18,7 +18,7 @@ module.exports = {
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27" (at 0 8.5 ${p.rot}) (layer "F.SilkS")
+      (fp_text value "ks27" (at 0 8.5 ${p.rot}) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     

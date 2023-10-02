@@ -35,11 +35,12 @@ module.exports = {
     ${p.at}
 
     ${"" /* footprint reference */}
-    (fp_text reference "${p.ref}" (at -16.256 -0.254 ${p.rot + 90}) (layer "F.SilkS") (effects (font (size 1.2 1.2) (thickness 0.2032))))
+    (fp_text reference "${p.ref}" (at -16.256 -0.254 ${p.rot + 90}) (layer "F.SilkS") ${p.ref_hide} (effects (font (size 1.2 1.2) (thickness 0.2032))))
     (fp_text value "rev_mcu" (at 16.51 0 ${p.rot + 90}) (layer "F.SilkS") hide (effects (font (size 1.2 1.2) (thickness 0.2032))))
 
     ${"" /* Outline */}
     (fp_rect (start -15.24 -8.89) (end 15.24 8.89) (stroke (width 0.15) (type solid)) (fill none) (layer "F.SilkS"))
+    (fp_rect (start -15.24 -8.89) (end 15.24 8.89) (stroke (width 0.15) (type solid)) (fill none) (layer "B.SilkS"))
 
     ${"" /* All vias, to make nets work */}
     (pad 1 thru_hole circle (at -13.97 -0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P1.str})
@@ -55,18 +56,18 @@ module.exports = {
     (pad 11 thru_hole circle (at 11.43 -0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P8.str})
     (pad 12 thru_hole circle (at 13.97 -0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P9.str})
 
-    (pad 13 thru_hole circle (at -13.97 0.762 ) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.RAW.str})
-    (pad 14 thru_hole circle (at -11.43 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.GND.str})
-    (pad 15 thru_hole circle (at -8.89 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.RST.str})
-    (pad 16 thru_hole circle (at -6.35 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.VCC.str})
-    (pad 17 thru_hole circle (at -3.81 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P21.str})
-    (pad 18 thru_hole circle (at -1.27 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P20.str})
-    (pad 19 thru_hole circle (at 1.27 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P19.str})
-    (pad 20 thru_hole circle (at 3.81 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P18.str})
-    (pad 21 thru_hole circle (at 6.35 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P15.str})
-    (pad 22 thru_hole circle (at 8.89 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P14.str})
-    (pad 23 thru_hole circle (at 11.43 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P16.str})
-    (pad 24 thru_hole circle (at 13.97 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P10.str})
+    (pad 24 thru_hole circle (at -13.97 0.762 ) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.RAW.str})
+    (pad 23 thru_hole circle (at -11.43 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.GND.str})
+    (pad 22 thru_hole circle (at -8.89 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.RST.str})
+    (pad 21 thru_hole circle (at -6.35 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.VCC.str})
+    (pad 20 thru_hole circle (at -3.81 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P21.str})
+    (pad 19 thru_hole circle (at -1.27 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P20.str})
+    (pad 18 thru_hole circle (at 1.27 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P19.str})
+    (pad 17 thru_hole circle (at 3.81 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P18.str})
+    (pad 16 thru_hole circle (at 6.35 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P15.str})
+    (pad 15 thru_hole circle (at 8.89 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P14.str})
+    (pad 14 thru_hole circle (at 11.43 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P16.str})
+    (pad 13 thru_hole circle (at 13.97 0.762 0) ( size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.P10.str})
     `;
 
     // I know these arrays below look ridiculous, but I needed to avoid float math
@@ -107,7 +108,7 @@ module.exports = {
             (options (clearance outline) (anchor rect))
             (primitives (gr_poly (pts (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)) (width 0)))
         )
-        (pad ${PIN} smd custom (at ${X} ${sign}${yArr[5]} ${p.rot + ROT}) (size 1.2 0.5) (layers B.Cu B.Mask)
+        (pad ${24 - PIN + 1} smd custom (at ${X} ${sign}${yArr[5]} ${p.rot + ROT}) (size 1.2 0.5) (layers B.Cu B.Mask)
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives (gr_poly (pts (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)) (width 0)))

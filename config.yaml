@@ -111,7 +111,7 @@ pcbs:
   left:
     outlines:
       main:
-        outline: combo
+        outline: board
     footprints:
       ks27:
         what: ks27
@@ -134,7 +134,7 @@ pcbs:
         what: revmicro
         where:
           ref: matrix_inner_top
-          shift: [1kc + 3, -0.5kc]
+          shift: [1kc + 3, -6]
           rotate: -90
       niceview:
         what: niceview
@@ -145,7 +145,7 @@ pcbs:
           CS: P1
         where:
           ref: matrix_inner_top
-          shift: [1kc + 3, -0.5kc - 2]
+          shift: [1kc + 3, -8]
       jstph:
         what: jstph
         params:
@@ -153,8 +153,27 @@ pcbs:
           neg: GND
         where:
           ref: matrix_inner_home
-          shift: [2kc + 2, 0.5kc - 3]
+          shift: [2kc - 3, -8]
           rotate: 180
+      jstph_rev:
+        what: jstph
+        params:
+          pos: VCC
+          neg: GND
+          side: B
+        where:
+          ref: matrix_inner_home
+          shift: [2kc - 3, -8]
+          rotate: 180
+      jumper:
+        what: jumper
+        params:
+          side: F
+          from: P2
+          to: MOSI
+        where:
+          ref: matrix_inner_top
+          shift: [1kc, 0.5kc]
       reset:
         what: button
         params:

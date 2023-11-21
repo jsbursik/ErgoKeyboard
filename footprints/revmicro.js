@@ -82,61 +82,29 @@ module.exports = {
         ${"" /* Thru-hole for MCU pin */}
         (pad "" thru_hole circle (at ${X} ${sign}${yArr[0]}) (size 1.6 1.6) (drill 1.1) (layers *.Cu *.Mask))
 
-        ${"" /* SMD Pads from MCU pin to Bridge (F and B Copper doesn't break mask) */}
-        (pad "" smd custom (at ${X} ${sign}${yArr[1]} ${p.rot}) (size 0.25 1) (layers F.Cu) (zone_connect 0) (options (clearance outline) (anchor rect)) (primitives))
-        (pad "" smd custom (at ${X} ${sign}${yArr[1]} ${p.rot}) (size 0.25 1) (layers B.Cu) (zone_connect 0) (options (clearance outline) (anchor rect)) (primitives))
-
         ${"" /* Bridge Pad FROM MCU pin */}
         (pad "" smd custom (at ${X} ${sign}${yArr[2]} ${p.rot + ROT}) (size 0.1 0.1) (layers F.Cu F.Mask)
-            (clearance 0.1) (zone_connect 0)
+            (clearance 0) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives (gr_poly (pts (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)) (width 0)))
         )
         (pad "" smd custom (at ${X} ${sign}${yArr[2]} ${p.rot + ROT}) (size 0.1 0.1) (layers B.Cu B.Mask)
-            (clearance 0.1) (zone_connect 0)
+            (clearance 0) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives (gr_poly (pts (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)) (width 0)))
         )
 
-        ${"" /* Mask hole for bridge */}
-        (fp_rect (start ${parseFloat(X - 0.508).toPrecision(3)} ${sign}${yArr[3]}) (end ${parseFloat(X + 0.508).toPrecision(3)} ${sign}${yArr[4]}) (stroke (width 0.1) (type solid)) (fill solid) (layer "F.Mask"))
-        (fp_rect (start ${parseFloat(X - 0.508).toPrecision(3)} ${sign}${yArr[3]}) (end ${parseFloat(X + 0.508).toPrecision(3)} ${sign}${yArr[4]}) (stroke (width 0.1) (type solid)) (fill solid) (layer "B.Mask"))
-
         ${"" /* Bridge Pad TO via */}
         (pad ${PIN} smd custom (at ${X} ${sign}${yArr[5]} ${p.rot + ROT}) (size 1.2 0.5) (layers F.Cu F.Mask)
-            (clearance 0.1) (zone_connect 0)
+            (clearance 0) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives (gr_poly (pts (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)) (width 0)))
         )
         (pad ${24 - PIN + 1} smd custom (at ${X} ${sign}${yArr[5]} ${p.rot + ROT}) (size 1.2 0.5) (layers B.Cu B.Mask)
-            (clearance 0.1) (zone_connect 0)
+            (clearance 0) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives (gr_poly (pts (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)) (width 0)))
         )
-        
-        ${"" /* Mask breakthrough for VIA (Just in case) */}
-        (fp_circle (center ${X} ${sign}${yArr[6]}) (end ${X + 0.125} ${sign}${yArr[6]}) (layer F.Mask) (width 0.25))
-        (fp_circle (center ${X} ${sign}${yArr[6]}) (end ${X + 0.125} ${sign}${yArr[6]}) (layer B.Mask) (width 0.25))
-
-        ${"" /* FRONT SMD Pad to VIA */}
-        (pad ${PIN} smd custom (at ${X} ${sign}${yArr[6]} ${p.rot + ROT}) (size 0.25 0.25) (layers F.Cu)
-            (zone_connect 0)
-            (options (clearance outline) (anchor circle))
-            (primitives
-              (gr_line (start 0 0) (end 0.766 -0.766) (width 0.25))
-              (gr_line (start 0.766 -0.766) (end 0.766 -3.298) (width 0.25))
-              (gr_line (start 0.766 -3.298) (end 0 -4.064) (width 0.25))
-            ))
-            
-        ${"" /* BACK SMD Pad FROM VIA to SAME PIN NUM on the opposite side */}
-        (pad ${PIN} smd custom (at ${X} ${sign}${yArr[6]} ${p.rot + ROT}) (size 0.25 0.25) (layers B.Cu)
-            (zone_connect 0)
-            (options (clearance outline) (anchor circle))
-            (primitives
-              (gr_line (start 0 0) (end -0.766 0.766) (width 0.25))
-              (gr_line (start -0.766 0.766) (end -0.766 4.822) (width 0.25))
-              (gr_line (start -0.766 4.822) (end 0 5.588) (width 0.25))
-            ))
       `;
     }
     output += ")";

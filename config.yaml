@@ -145,7 +145,7 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [0, 10]
+          shift: [2, 9]
       revmicro:
         what: revmicro
         where:

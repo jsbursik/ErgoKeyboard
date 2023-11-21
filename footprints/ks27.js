@@ -61,6 +61,9 @@ module.exports = {
         `;
       } else if (p.hotswap && def_rev) {
         return `
+          ${"" /* via to help with routing */}
+          (pad "1" thru_hole circle (at -7.675 8.382 180) (size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.from.str})
+
           ${"" /* holes */}
           (pad "" np_thru_hole circle (at -4.4 4.7) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           (pad "" np_thru_hole circle (at 2.6 5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))

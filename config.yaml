@@ -147,7 +147,7 @@ pcbs:
         adjust:
           shift: [2, 9]
       revmicro:
-        what: revmicro
+        what: promicro_pretty
         where:
           ref: matrix_inner_top
           shift: [1kc + 3, -6]

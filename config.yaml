@@ -66,6 +66,7 @@ points:
       rows:
         cluster:
           row_net: P9
+  rotate: 7
 outlines:
   switches:
     - what: rectangle

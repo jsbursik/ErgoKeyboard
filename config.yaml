@@ -146,7 +146,8 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [2, 9]
+          shift: [9, 6]
+          rotate: -90
       revmicro:
         what: promicro_pretty
         where:
